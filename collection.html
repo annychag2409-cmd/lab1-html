@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запланированные поездки | По пути</title>
+</head>
+<body>
+  <header>
+    <p><strong>По пути</strong> — сервис поиска попутчиков</p>
+
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Поездки</a></li>
+        <li><a href="detail.html">Детали поездки</a></li>
+        <li>
+          <a href="collection.html" aria-current="page">Мои поездки</a>
+        </li>
+        <li><a href="checkout.html">Бронирование</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+  </header>
+
+  <main id="main">
+    <h1>Запланированные поездки</h1>
+
+    <section>
+      <h2>Мой план поездок</h2>
+
+      <table>
+        <caption>Поездки из Уфы на ноябрь 2026 года</caption>
+
+        <colgroup span="2"></colgroup>
+        <colgroup span="3"></colgroup>
+
+        <thead>
+          <tr>
+            <th colspan="2" scope="colgroup">Маршрут</th>
+            <th rowspan="2" scope="col">Дата</th>
+            <th rowspan="2" scope="col">Водитель</th>
+            <th rowspan="2" scope="col">Стоимость места</th>
+          </tr>
+
+          <tr>
+            <th scope="col">Город отправления</th>
+            <th scope="col">Город прибытия</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th rowspan="3" scope="rowgroup">Уфа</th>
+            <td>Казань</td>
+            <td>
+              <time datetime="2026-11-20">20.11.2026</time>
+            </td>
+            <td>Алексей</td>
+            <td>1 500 ₽</td>
+          </tr>
+
+          <tr>
+            <td>Самара</td>
+            <td>
+              <time datetime="2026-11-21">21.11.2026</time>
+            </td>
+            <td>Мария</td>
+            <td>1 800 ₽</td>
+          </tr>
+
+          <tr>
+            <td>Челябинск</td>
+            <td>
+              <time datetime="2026-11-22">22.11.2026</time>
+            </td>
+            <td>Игорь</td>
+            <td>1 300 ₽</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th colspan="4" scope="row">
+              Общая стоимость запланированных поездок
+            </th>
+            <td>4 600 ₽</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p>
+        <a href="checkout.html">
+          Забронировать место на маршруте Уфа — Казань
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>Сервис поиска попутчиков «По пути».</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бронирование места | По пути</title>
+</head>
+<body>
+  <header>
+    <p><strong>По пути</strong> — сервис поиска попутчиков</p>
+
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Поездки</a></li>
+        <li><a href="detail.html">Детали поездки</a></li>
+        <li><a href="collection.html">Мои поездки</a></li>
+        <li>
+          <a href="checkout.html" aria-current="page">Бронирование</a>
+        </li>
+      </ul>
+    </nav>
+
+    <hr>
+  </header>
+
+  <main id="main">
+    <h1>Бронирование места</h1>
+
+    <p>Маршрут: Уфа — Казань.</p>
+    <p>Отправление: 20 ноября 2026 года в 08:00.</p>
+    <p>Стоимость одного места: 1 500 ₽.</p>
+
+    <form action="checkout.html" method="get">
+      <fieldset>
+        <legend>Данные пассажира</legend>
+
+        <p>
+          <label for="full-name">Имя и фамилия *</label><br>
+
+          <input
+            type="text"
+            id="full-name"
+            name="full_name"
+            minlength="3"
+            maxlength="80"
+            autocomplete="name"
+            required>
+        </p>
+
+        <p>
+          <label for="email">Электронная почта *</label><br>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            maxlength="100"
+            autocomplete="email"
+            required>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Параметры бронирования</legend>
+
+        <p>
+          <label for="seats">
+            Количество мест для бронирования *
+          </label><br>
+
+          <input
+            type="number"
+            id="seats"
+            name="seats"
+            min="1"
+            max="3"
+            step="1"
+            value="1"
+            required>
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="large-luggage"
+            name="large_luggage"
+            value="yes">
+
+          <label for="large-luggage">
+            У меня есть крупногабаритный багаж
+          </label>
+        </p>
+
+        <p>
+          <label for="music">
+            Предпочтения по музыке в салоне *
+          </label><br>
+
+          <select id="music" name="music" required>
+            <option value="">Выберите вариант</option>
+            <option value="quiet">Предпочитаю тишину</option>
+            <option value="pop">Поп-музыка</option>
+            <option value="rock">Рок</option>
+            <option value="any">Любая музыка</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <p>
+        <label for="comment">
+          Комментарий водителю
+        </label><br>
+
+        <textarea
+          id="comment"
+          name="comment"
+          rows="3"
+          cols="50"
+          maxlength="500"
+          placeholder="Например, укажите размеры багажа"></textarea>
+      </p>
+
+      <p>* Обязательные поля.</p>
+
+      <p>
+        <button type="submit">Отправить заявку</button>
+        <button type="reset">Очистить форму</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <hr>
+    <p>Сервис поиска попутчиков «По пути».</p>
+  </footer>
+</body>
+</html>
