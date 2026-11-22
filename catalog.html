@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ru">
   <head>
@@ -10,7 +10,7 @@
   <body class="page">
     <a class="page__skip-link" href="#main">Перейти к содержимому</a>
     <header class="page__header header">
-      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути <span aria-hidden="true">↗</span></a></p>
       <nav aria-label="Основная навигация" class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
@@ -30,53 +30,68 @@
       <h1 class="content__title">Каталог поездок</h1>
       <section aria-labelledby="routes-title" class="content__section panel">
         <h2 class="content__heading" id="routes-title">Доступные маршруты</h2>
-        <article class="content__section trip-card">
-          <h3 class="content__subheading">Уфа — Казань</h3>
-          <p class="content__text">
-            Отправление:
-            <time class="content__time" datetime="2026-11-20T08:00">20 ноября 2026, 08:00</time>
-            .
-          </p>
-          <p class="content__text">Водитель: Алексей. Автомобиль: Lada Vesta. Свободно 3 места.</p>
-          <p class="content__text">
-            Стоимость одного места:
-            <strong class="content__price">1 500 ₽</strong>
-            .
-          </p>
-          <p class="content__text">
-            <a class="button button_primary" href="detail.html">Подробнее о поездке Уфа — Казань</a>
-          </p>
-        </article>
-        <article class="content__section trip-card">
-          <h3 class="content__subheading">Уфа — Самара</h3>
-          <p class="content__text">
-            Отправление:
-            <time class="content__time" datetime="2026-11-21T09:30">21 ноября 2026, 09:30</time>
-            .
-          </p>
-          <p class="content__text">Водитель: Мария. Автомобиль: Kia Rio. Свободно 2 места.</p>
-          <p class="content__text">
-            Стоимость одного места:
-            <strong class="content__price">1 800 ₽</strong>
-            .
-          </p>
-        </article>
-        <article class="content__section trip-card">
-          <h3 class="content__subheading">Уфа — Челябинск</h3>
-          <p class="content__text">
-            Отправление:
-            <time class="content__time" datetime="2026-11-22T07:00">22 ноября 2026, 07:00</time>
-            .
-          </p>
-          <p class="content__text">Водитель: Игорь. Автомобиль: Skoda Octavia. Свободно 3 места.</p>
-          <p class="content__text">
-            Стоимость одного места:
-            <strong class="content__price">1 300 ₽</strong>
-            .
-          </p>
-        </article>
+        <div class="route-list">
+          <article class="trip-card">
+            <h3 class="trip-card__route">
+              <span class="trip-card__city">Уфа</span>
+              <span class="trip-card__line" aria-hidden="true"></span>
+              <span class="trip-card__sr-only"> — </span>
+              <span class="trip-card__city">Казань</span>
+            </h3>
+            <p class="content__text">
+              Отправление:
+              <time class="content__time" datetime="2026-11-20T08:00">20 ноября 2026, 08:00</time>.
+            </p>
+            <p class="content__text">Водитель: Алексей. Автомобиль: Lada Vesta. Свободно 3 места.</p>
+            <p class="content__text">
+              Стоимость одного места:
+              <strong class="content__price">1 500 ₽</strong>.
+            </p>
+            <p class="content__text">
+              <a class="button button_primary" href="detail.html">Подробнее о поездке Уфа — Казань</a>
+            </p>
+          </article>
+          <article class="trip-card">
+            <h3 class="trip-card__route">
+              <span class="trip-card__city">Уфа</span>
+              <span class="trip-card__line" aria-hidden="true"></span>
+              <span class="trip-card__sr-only"> — </span>
+              <span class="trip-card__city">Самара</span>
+            </h3>
+            <p class="content__text">
+              Отправление:
+              <time class="content__time" datetime="2026-11-21T09:30">21 ноября 2026, 09:30</time>.
+            </p>
+            <p class="content__text">Водитель: Мария. Автомобиль: Kia Rio. Свободно 2 места.</p>
+            <p class="content__text">
+              Стоимость одного места:
+              <strong class="content__price">1 800 ₽</strong>.
+            </p>
+          </article>
+          <article class="trip-card">
+            <h3 class="trip-card__route">
+              <span class="trip-card__city">Уфа</span>
+              <span class="trip-card__line" aria-hidden="true"></span>
+              <span class="trip-card__sr-only"> — </span>
+              <span class="trip-card__city">Челябинск</span>
+            </h3>
+            <p class="content__text">
+              Отправление:
+              <time class="content__time" datetime="2026-11-22T07:00">22 ноября 2026, 07:00</time>.
+            </p>
+            <p class="content__text">Водитель: Игорь. Автомобиль: Skoda Octavia. Свободно 3 места.</p>
+            <p class="content__text">
+              Стоимость одного места:
+              <strong class="content__price">1 300 ₽</strong>.
+            </p>
+          </article>
+        </div>
       </section>
     </main>
+    <aside class="page__aside advice" aria-labelledby="advice-title">
+      <h2 class="content__heading" id="advice-title">Перед бронированием</h2>
+      <p class="content__text">Проверьте время отправления, стоимость и количество свободных мест.</p>
+    </aside>
     <footer class="page__footer footer">
       <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
     </footer>

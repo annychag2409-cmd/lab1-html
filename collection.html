@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ru">
   <head>
@@ -10,7 +10,7 @@
   <body class="page">
     <a class="page__skip-link" href="#main">Перейти к содержимому</a>
     <header class="page__header header">
-      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути <span aria-hidden="true">↗</span></a></p>
       <nav aria-label="Основная навигация" class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
@@ -30,10 +30,9 @@
       <h1 class="content__title">Запланированные поездки</h1>
       <section class="content__section panel">
         <h2 class="content__heading">Мой план поездок</h2>
-        <div
+        <section
           aria-label="Запланированные поездки: таблица с горизонтальной прокруткой"
           class="content__table-scroll"
-          role="region"
           tabindex="0"
         >
           <table class="trips-table">
@@ -110,7 +109,7 @@
               </tr>
             </tfoot>
           </table>
-        </div>
+        </section>
         <p class="content__text">
           <a class="button button_primary" href="checkout.html">
             Забронировать место на маршруте Уфа — Казань
@@ -118,6 +117,10 @@
         </p>
       </section>
     </main>
+    <aside class="page__aside advice" aria-labelledby="advice-title">
+      <h2 class="content__heading" id="advice-title">Другие маршруты</h2>
+      <a class="button button_secondary" href="catalog.html">Открыть каталог поездок</a>
+    </aside>
     <footer class="page__footer footer">
       <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
     </footer>

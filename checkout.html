@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ru">
   <head>
@@ -10,7 +10,7 @@
   <body class="page">
     <a class="page__skip-link" href="#main">Перейти к содержимому</a>
     <header class="page__header header">
-      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути <span aria-hidden="true">↗</span></a></p>
       <nav aria-label="Основная навигация" class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
@@ -28,9 +28,6 @@
     <main class="page__main content" id="main" tabindex="-1">
       <p class="content__eyebrow">ПОЕЗДКИ С ХОРОШЕЙ КОМПАНИЕЙ</p>
       <h1 class="content__title">Бронирование места</h1>
-      <p class="content__text">Маршрут: Уфа — Казань.</p>
-      <p class="content__text">Отправление: 20 ноября 2026 года в 08:00.</p>
-      <p class="content__text">Стоимость одного места: 1 500 ₽.</p>
       <form action="checkout.html" class="content__section booking-form" method="get">
         <fieldset class="booking-form__fieldset">
           <legend class="booking-form__legend">Данные пассажира</legend>
@@ -43,7 +40,7 @@
               maxlength="80"
               minlength="3"
               name="full_name"
-              required=""
+              required
               type="text"
             />
           </p>
@@ -55,7 +52,7 @@
               id="email"
               maxlength="100"
               name="email"
-              required=""
+              required
               type="email"
             />
           </p>
@@ -72,13 +69,13 @@
               max="3"
               min="1"
               name="seats"
-              required=""
+              required
               step="1"
               type="number"
               value="1"
             />
           </p>
-          <p class="booking-form__field">
+          <p class="booking-form__field booking-form__field_inline">
             <input
               class="booking-form__checkbox"
               id="large-luggage"
@@ -92,7 +89,7 @@
           </p>
           <p class="booking-form__field">
             <label class="booking-form__label" for="music">Предпочтения по музыке в салоне *</label>
-            <select class="booking-form__control" id="music" name="music" required="">
+            <select class="booking-form__control" id="music" name="music" required>
               <option value="">Выберите вариант</option>
               <option value="quiet">Предпочитаю тишину</option>
               <option value="pop">Поп-музыка</option>
@@ -114,16 +111,22 @@
           ></textarea>
         </p>
         <p class="booking-form__field">* Обязательные поля.</p>
-        <p class="booking-form__field">
-          <button class="booking-form__button button button_primary" type="submit">
+        <p class="booking-form__actions">
+          <button class="button button_primary" type="submit">
             Отправить заявку
           </button>
-          <button class="booking-form__button button button_secondary" type="reset">
+          <button class="button button_secondary" type="reset">
             Очистить форму
           </button>
         </p>
       </form>
     </main>
+    <aside class="page__aside advice" aria-labelledby="advice-title">
+      <h2 class="content__heading" id="advice-title">Детали бронирования</h2>
+      <p class="content__text">Маршрут: Уфа — Казань.</p>
+      <p class="content__text">Отправление: 20 ноября 2026 года в 08:00.</p>
+      <p class="content__text">Стоимость одного места: 1 500 ₽.</p>
+    </aside>
     <footer class="page__footer footer">
       <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
     </footer>

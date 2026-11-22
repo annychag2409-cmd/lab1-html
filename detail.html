@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ru">
   <head>
@@ -11,7 +11,7 @@
   <body class="page page_trip">
     <a class="page__skip-link" href="#main">Перейти к содержимому</a>
     <header class="page__header header">
-      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути <span aria-hidden="true">↗</span></a></p>
       <nav aria-label="Основная навигация" class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
@@ -31,35 +31,9 @@
       <h1 class="content__title">Поездка Уфа — Казань</h1>
       <article class="content__section trip">
         <h2 class="content__heading">Маршрут и условия</h2>
-        <section aria-labelledby="driver-title" class="trip__section driver">
-          <div class="driver__avatar">
-            <svg
-              aria-label="Аватар водителя Алексея"
-              class="driver__portrait"
-              role="img"
-              viewbox="0 0 80 80"
-            >
-              <rect fill="#dce9d8" height="80" rx="40" width="80"></rect>
-              <circle cx="40" cy="30" fill="#52765b" r="14"></circle>
-              <path d="M14 80v-9a26 26 0 0 1 52 0v9" fill="#52765b"></path>
-            </svg>
-            <span aria-label="Водитель онлайн" class="driver__status" role="img"></span>
-          </div>
-          <h2 class="driver__name" id="driver-title">Алексей</h2>
-          <p class="driver__description">Водитель · сейчас онлайн</p>
-          <details class="driver__contact" id="driver-contact">
-            <summary class="driver__contact-toggle">Как связаться с водителем</summary>
-            <p class="driver__description">
-              Оставьте заявку на бронирование и укажите в комментарии, как с вами связаться.
-              Контакты водителя появятся после подтверждения поездки.
-            </p>
-            <a class="button button_primary" href="checkout.html">Оставить заявку</a>
-          </details>
-        </section>
         <p class="content__text">
           Отправление из Уфы:
-          <time class="content__time" datetime="2026-11-20T08:00">20 ноября 2026 в 08:00</time>
-          .
+          <time class="content__time" datetime="2026-11-20T08:00">20 ноября 2026 в 08:00</time>.
         </p>
         <p class="content__text">
           Встреча у центрального входа на Южный автовокзал Уфы. Прибытие в Казань — к автовокзалу
@@ -69,9 +43,9 @@
           <img
             alt="Схема маршрута из Уфы в Казань"
             class="route-map__image"
-            height="300"
+            height="1266"
             src="images/ufa-kazan.png"
-            width="560"
+            width="2614"
           />
           <figcaption class="route-map__caption">Схема маршрута Уфа — Казань.</figcaption>
         </figure>
@@ -105,13 +79,38 @@
         </p>
       </article>
     </main>
+    <aside aria-labelledby="driver-title" class="page__aside driver">
+      <div class="driver__avatar">
+        <svg
+          aria-label="Аватар водителя Алексея"
+          class="driver__portrait"
+          role="img"
+          viewBox="0 0 80 80"
+        >
+          <rect fill="#dce9d8" height="80" rx="40" width="80"></rect>
+          <circle cx="40" cy="30" fill="#52765b" r="14"></circle>
+          <path d="M14 80v-9a26 26 0 0 1 52 0v9" fill="#52765b"></path>
+        </svg>
+        <span class="driver__status" aria-hidden="true"></span>
+      </div>
+      <h2 class="driver__name" id="driver-title">Алексей</h2>
+      <p class="driver__description">Водитель · сейчас онлайн</p>
+      <details class="driver__contact" id="driver-contact">
+        <summary class="driver__contact-toggle">Как связаться с водителем</summary>
+        <p class="driver__description">
+          Оставьте заявку на бронирование и укажите в комментарии, как с вами связаться.
+          Контакты водителя появятся после подтверждения поездки.
+        </p>
+        <a class="button button_primary" href="checkout.html">Оставить заявку</a>
+      </details>
+      <div class="driver__contact-bar contact-bar">
+        <a class="contact-bar__button button button_primary" href="#driver-contact">
+          Связаться с водителем
+        </a>
+      </div>
+    </aside>
     <footer class="page__footer footer">
       <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
     </footer>
-    <div class="page__contact-bar contact-bar">
-      <a class="contact-bar__button button button_primary" href="#driver-contact">
-        Связаться с водителем
-      </a>
-    </div>
   </body>
 </html>

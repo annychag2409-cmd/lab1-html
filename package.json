@@ -1,8 +1,8 @@
 {
-  "name": "po-puti-lab2",
+  "name": "po-puti-lab3",
   "version": "1.0.0",
   "private": true,
-  "description": "Лабораторная работа 2. БЭМ и SCSS. Вариант 23.",
+  "description": "Лабораторная работа 3. Адаптивная вёрстка и доступность. Вариант 23.",
   "scripts": {
     "build:css": "sass src/scss/style.scss src/css/style.css --no-source-map",
     "watch:css": "sass --watch src/scss/style.scss:src/css/style.css --no-source-map"

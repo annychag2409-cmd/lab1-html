@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ru">
   <head>
@@ -10,7 +10,7 @@
   <body class="page">
     <a class="page__skip-link" href="#main">Перейти к содержимому</a>
     <header class="page__header header">
-      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути <span aria-hidden="true">↗</span></a></p>
       <nav aria-label="Основная навигация" class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -45,13 +45,13 @@
           <li class="content__list-item">Выбор количества мест и условий поездки.</li>
         </ul>
       </section>
-      <aside aria-labelledby="advice-title" class="content__section advice">
-        <h2 class="content__heading" id="advice-title">Перед поездкой</h2>
-        <p class="content__text">
-          Уточните у водителя место встречи, время отправления и условия провоза багажа.
-        </p>
-      </aside>
     </main>
+    <aside aria-labelledby="advice-title" class="page__aside advice">
+      <h2 class="content__heading" id="advice-title">Перед поездкой</h2>
+      <p class="content__text">
+        Уточните у водителя место встречи, время отправления и условия провоза багажа.
+      </p>
+    </aside>
     <footer class="page__footer footer">
       <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
     </footer>

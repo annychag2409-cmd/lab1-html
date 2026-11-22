@@ -9,7 +9,24 @@ body {
   padding: 0;
 }
 
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 3px;
+}
+
+html:has(.page_trip) {
+  scroll-padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+}
+
 .page {
+  --gutter: 1rem;
+  --layout-gap: 1.5rem;
+  --layout-width: 72rem;
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas: "header" "main" "aside" "footer";
   background-color: #f6f5ef;
   color: #223e32;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -17,15 +34,27 @@ body {
   line-height: 1.65;
 }
 .page__header {
-  padding: 24px max(24px, (100% - 1000px) / 2);
+  grid-area: header;
+  padding: 1rem max(var(--gutter), (100% - var(--layout-width)) / 2);
 }
 .page__main {
-  max-width: 1048px;
-  margin: 0 auto;
-  padding: 48px 24px 64px;
+  grid-area: main;
+  min-width: 0;
+  padding: 2rem var(--gutter) 0;
+}
+.page__aside {
+  grid-area: aside;
+  min-width: 0;
+  align-self: start;
+  margin: 0 var(--gutter) 2rem;
+  overflow-wrap: anywhere;
 }
 .page__footer {
-  padding: 24px max(24px, (100% - 1000px) / 2);
+  grid-area: footer;
+  padding: 1.5rem max(var(--gutter), (100% - var(--layout-width)) / 2);
+}
+.page_trip {
+  padding-bottom: calc(7rem + env(safe-area-inset-bottom));
 }
 .page__skip-link {
   position: absolute;
@@ -42,18 +71,17 @@ body {
   outline: 3px solid #326047;
   outline-offset: 4px;
 }
-.page__contact-bar {
-  margin: 0 auto 32px;
-  max-width: 1000px;
-  padding: 0 24px;
-}
 
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
   border-bottom: 1px solid #d6dfd2;
   background-color: #ffffff;
 }
 .header__brand {
-  margin: 0 0 20px;
+  margin: 0;
 }
 .header__logo {
   display: inline-block;
@@ -71,25 +99,18 @@ body {
   outline: 3px solid #326047;
   outline-offset: 4px;
 }
-.header__tagline {
-  display: inline-block;
-  margin-left: 24px;
-  color: #5b6b60;
-  font-size: 14px;
-}
 
 .nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.nav__item {
-  display: inline-block;
-  margin: 4px 8px 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
 }
 .nav__link {
   display: inline-block;
-  padding: 9px 16px;
+  padding: 9px 12px;
   border-radius: 24px;
   color: #5b6b60;
   text-decoration: none;
@@ -170,7 +191,7 @@ body {
 }
 
 .panel {
-  padding: 32px;
+  padding: 1.125rem;
   background-color: #ffffff;
   border: 1px solid #d6dfd2;
   border-radius: 20px;
@@ -178,18 +199,70 @@ body {
 }
 .panel_intro {
   background-color: #e9efdf;
-  padding: 40px;
+  padding: 1.375rem;
 }
 
 .advice {
   background-color: #f0ebdd;
   border: 1px solid #dfd6bd;
   border-radius: 20px;
-  padding: 28px 32px;
+  padding: 1.375rem;
+}
+
+.route-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 1rem;
 }
 
 .trip-card {
-  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.125rem;
+}
+.trip-card .content__text {
+  margin: 0;
+}
+.trip-card__route {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.375rem;
+  font-size: clamp(1rem, 3vw, 1.375rem);
+}
+.trip-card__city {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.trip-card__line {
+  display: flex;
+  flex: 1 0 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 9rem;
+  height: 0.5rem;
+  color: #326047;
+  background: linear-gradient(currentColor, currentColor) center/100% 2px no-repeat;
+}
+.trip-card__line::before, .trip-card__line::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: #f6f5ef;
+}
+.trip-card__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.trip-card {
   background-color: #f6f5ef;
   border: 1px solid #d6dfd2;
   border-radius: 16px;
@@ -255,8 +328,8 @@ body {
   width: 100%;
   max-width: 100%;
   height: auto;
-  aspect-ratio: 28/15;
-  object-fit: cover;
+  aspect-ratio: 2614/1266;
+  object-fit: contain;
   border: 1px solid #d6dfd2;
   border-radius: 20px;
 }
@@ -278,7 +351,7 @@ body {
 }
 
 .driver {
-  padding: 28px;
+  padding: 1.375rem;
   border: 1px solid #d6dfd2;
   border-radius: 20px;
   background-color: #ffffff;
@@ -330,6 +403,15 @@ body {
   outline-offset: 3px;
 }
 
+.contact-bar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 10;
+  padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom));
+  background: #ffffff;
+  border-top: 1px solid #d6dfd2;
+  box-shadow: 0 -6px 24px rgba(34, 62, 50, 0.08);
+}
 .contact-bar__button {
   width: 100%;
 }
@@ -363,12 +445,15 @@ body {
 }
 
 .booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   max-width: 760px;
 }
 .booking-form__fieldset {
   min-width: 0;
-  margin: 0 0 24px;
-  padding: 24px;
+  margin: 0;
+  padding: 1rem;
   border: 1px solid #d6dfd2;
   border-radius: 20px;
   background-color: #ffffff;
@@ -379,11 +464,19 @@ body {
   font-size: 20px;
 }
 .booking-form__field {
-  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin: 0;
+}
+.booking-form__field + .booking-form__field {
+  margin-top: 0.875rem;
+}
+.booking-form__field_inline {
+  flex-direction: row;
+  align-items: flex-start;
 }
 .booking-form__label {
-  display: block;
-  margin-bottom: 8px;
   font-size: 15px;
   font-weight: 600;
 }
@@ -411,7 +504,8 @@ body {
 .booking-form__checkbox {
   width: 20px;
   height: 20px;
-  margin: 0 8px 8px 0;
+  flex: none;
+  margin: 0.2rem 0.25rem 0 0;
   accent-color: #326047;
   vertical-align: middle;
   cursor: pointer;
@@ -424,8 +518,11 @@ body {
   outline: 3px solid #326047;
   outline-offset: 3px;
 }
-.booking-form__button {
-  margin: 0 8px 12px 0;
+.booking-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
 }
 
 .footer {
@@ -437,59 +534,64 @@ body {
   font-size: 13px;
 }
 
-@media (max-width: 640px) {
-  .page__header {
-    padding: 20px 16px 12px;
+@media (min-width: 768px) {
+  html:has(.page_trip) {
+    scroll-padding-bottom: 0;
+  }
+  .page {
+    --gutter: 1.5rem;
+    --layout-gap: 1.25rem;
+    grid-template-columns: minmax(var(--gutter), 1fr) minmax(0, 44rem) minmax(14rem, 19rem) minmax(var(--gutter), 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header header header" ". main aside ." "footer footer footer footer";
   }
   .page__main {
-    padding: 32px 16px 40px;
+    padding: 2.5rem var(--layout-gap) 2rem 0;
   }
-  .page__footer {
-    padding: 24px 16px;
+  .page__aside {
+    margin: 2.5rem 0 2rem;
   }
   .page_trip {
-    padding-bottom: calc(100px + env(safe-area-inset-bottom));
+    padding-bottom: 0;
   }
-  .page__contact-bar {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    margin: 0;
-    max-width: none;
-    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-  }
-  .header__tagline {
-    display: block;
-    margin: 4px 0 0;
-  }
-  .nav__item {
-    margin-right: 2px;
-  }
-  .nav__link {
-    padding: 8px 11px;
-    font-size: 13px;
-  }
-  .panel {
-    padding: 22px 18px;
-  }
-  .panel_intro {
-    padding: 28px 22px;
-  }
-  .advice {
-    padding: 22px;
-  }
-  .trip-card {
-    padding: 22px 18px;
+  .panel, .trip-card {
+    padding: 1.375rem;
   }
   .contact-bar {
-    background-color: #ffffff;
-    border-top: 1px solid #d6dfd2;
-    box-shadow: 0 -6px 24px rgba(34, 62, 50, 0.08);
+    position: static;
+    margin-top: 1rem;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+}
+@media (min-width: 1200px) {
+  .page {
+    --layout-gap: 2rem;
+    grid-template-columns: minmax(var(--gutter), 1fr) minmax(0, 52rem) minmax(0, 20rem) minmax(var(--gutter), 1fr);
+  }
+  .page__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page__main {
+    padding-top: 3.5rem;
+  }
+  .page__aside {
+    margin-top: 3.5rem;
+  }
+  .nav__link {
+    padding-inline: 1rem;
+  }
+  .panel, .trip-card {
+    padding: 1.75rem;
+  }
+  .panel_intro {
+    padding: 2rem;
   }
   .booking-form__fieldset {
-    padding: 20px 16px;
+    padding: 1.5rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
