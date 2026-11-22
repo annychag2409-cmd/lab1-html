@@ -1,0 +1,11 @@
+{
+  "name": "po-puti-lab2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Лабораторная работа 2. БЭМ и SCSS. Вариант 23.",
+  "scripts": {
+    "build:css": "sass src/scss/style.scss src/css/style.css --no-source-map",
+    "watch:css": "sass --watch src/scss/style.scss:src/css/style.css --no-source-map"
+  },
+  "devDependencies": {"sass": "^1.93.0"}
+}

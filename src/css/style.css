@@ -1,0 +1,501 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  background-color: #f6f5ef;
+  color: #223e32;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.page__header {
+  padding: 24px max(24px, (100% - 1000px) / 2);
+}
+.page__main {
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+.page__footer {
+  padding: 24px max(24px, (100% - 1000px) / 2);
+}
+.page__skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 20;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #223e32;
+  color: white;
+}
+.page__skip-link:focus-visible {
+  top: 12px;
+  outline: 3px solid #326047;
+  outline-offset: 4px;
+}
+.page__contact-bar {
+  margin: 0 auto 32px;
+  max-width: 1000px;
+  padding: 0 24px;
+}
+
+.header {
+  border-bottom: 1px solid #d6dfd2;
+  background-color: #ffffff;
+}
+.header__brand {
+  margin: 0 0 20px;
+}
+.header__logo {
+  display: inline-block;
+  color: #223e32;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  transition: color 0.2s ease;
+}
+.header__logo:hover {
+  color: #326047;
+}
+.header__logo:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 4px;
+}
+.header__tagline {
+  display: inline-block;
+  margin-left: 24px;
+  color: #5b6b60;
+  font-size: 14px;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__item {
+  display: inline-block;
+  margin: 4px 8px 4px 0;
+}
+.nav__link {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 24px;
+  color: #5b6b60;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.nav__link:hover {
+  background-color: #e9efdf;
+  color: #223e32;
+}
+.nav__link:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 3px;
+}
+.nav__link_active {
+  background-color: #223e32;
+  color: white;
+}
+.nav__link_active:hover {
+  background-color: #326047;
+  color: white;
+}
+
+.content__eyebrow {
+  margin: 0 0 16px;
+  color: #326047;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.content__title {
+  margin: 0 0 32px;
+  max-width: 830px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+  font-weight: 500;
+}
+.content__heading {
+  margin: 0 0 20px;
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 650;
+}
+.content__subheading {
+  margin: 0 0 16px;
+  font-size: 21px;
+  line-height: 1.4;
+}
+.content__text {
+  margin: 0 0 16px;
+}
+.content__section {
+  margin: 0 0 24px;
+}
+.content__list {
+  padding-left: 22px;
+  margin: 0 0 16px;
+}
+.content__list-item {
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+.content__price {
+  color: #326047;
+  font-size: 22px;
+}
+.content__table-scroll {
+  overflow-x: auto;
+  border: 1px solid #d6dfd2;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+.content__table-scroll:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 3px;
+}
+
+.panel {
+  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #d6dfd2;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(34, 62, 50, 0.05);
+}
+.panel_intro {
+  background-color: #e9efdf;
+  padding: 40px;
+}
+
+.advice {
+  background-color: #f0ebdd;
+  border: 1px solid #dfd6bd;
+  border-radius: 20px;
+  padding: 28px 32px;
+}
+
+.trip-card {
+  padding: 28px;
+  background-color: #f6f5ef;
+  border: 1px solid #d6dfd2;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.trip-card:hover {
+  border-color: #91a98e;
+  box-shadow: 0 8px 28px rgba(34, 62, 50, 0.05);
+  transform: translateY(-3px);
+}
+
+.button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 4px;
+}
+.button_primary {
+  background-color: #326047;
+  color: white;
+}
+.button_primary:hover {
+  background-color: #224a34;
+}
+.button_secondary {
+  background-color: #ffffff;
+  color: #223e32;
+  border-color: #d6dfd2;
+}
+.button_secondary:hover {
+  background-color: #e9efdf;
+  border-color: #326047;
+}
+
+.trip__section {
+  margin: 28px 0;
+}
+.trip__figure {
+  margin: 28px 0;
+}
+.trip__specs {
+  margin: 0;
+}
+
+.route-map__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 28/15;
+  object-fit: cover;
+  border: 1px solid #d6dfd2;
+  border-radius: 20px;
+}
+.route-map__caption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #5b6b60;
+  text-align: center;
+}
+
+.specs__term {
+  color: #5b6b60;
+  font-size: 13px;
+}
+.specs__value {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.driver {
+  padding: 28px;
+  border: 1px solid #d6dfd2;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+.driver__avatar {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+}
+.driver__portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.driver__status {
+  position: absolute;
+  right: 1px;
+  bottom: 2px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: #248245;
+}
+.driver__name {
+  margin: 0 0 4px;
+  font-size: 23px;
+}
+.driver__description {
+  margin: 0 0 16px;
+  color: #5b6b60;
+}
+.driver__contact {
+  scroll-margin-top: 24px;
+}
+.driver__contact-toggle {
+  padding: 10px 0;
+  color: #326047;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.driver__contact-toggle:hover {
+  color: #223e32;
+}
+.driver__contact-toggle:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 3px;
+}
+
+.contact-bar__button {
+  width: 100%;
+}
+
+.trips-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.trips-table__caption {
+  padding: 18px;
+  text-align: left;
+  font-weight: 650;
+  background-color: #e9efdf;
+}
+.trips-table__cell {
+  padding: 16px;
+  text-align: left;
+  border: 1px solid #d6dfd2;
+  vertical-align: middle;
+}
+.trips-table__cell_heading {
+  font-weight: 650;
+}
+.trips-table__head {
+  background-color: #f6f5ef;
+}
+.trips-table__foot {
+  background-color: #e9efdf;
+}
+
+.booking-form {
+  max-width: 760px;
+}
+.booking-form__fieldset {
+  min-width: 0;
+  margin: 0 0 24px;
+  padding: 24px;
+  border: 1px solid #d6dfd2;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+.booking-form__legend {
+  padding: 0 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.booking-form__field {
+  margin: 0 0 20px;
+}
+.booking-form__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.booking-form__control {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #9aa99b;
+  border-radius: 10px;
+  font: inherit;
+  color: #223e32;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.booking-form__control:hover {
+  border-color: #326047;
+}
+.booking-form__control:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 3px;
+  box-shadow: 0 8px 28px rgba(34, 62, 50, 0.05);
+}
+.booking-form__checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px 8px 0;
+  accent-color: #326047;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.booking-form__checkbox:hover {
+  box-shadow: 0 0 0 4px #e9efdf;
+}
+.booking-form__checkbox:focus-visible {
+  outline: 3px solid #326047;
+  outline-offset: 3px;
+}
+.booking-form__button {
+  margin: 0 8px 12px 0;
+}
+
+.footer {
+  border-top: 1px solid #d6dfd2;
+  color: #5b6b60;
+}
+.footer__text {
+  margin: 0;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .page__header {
+    padding: 20px 16px 12px;
+  }
+  .page__main {
+    padding: 32px 16px 40px;
+  }
+  .page__footer {
+    padding: 24px 16px;
+  }
+  .page_trip {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  }
+  .page__contact-bar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    margin: 0;
+    max-width: none;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  }
+  .header__tagline {
+    display: block;
+    margin: 4px 0 0;
+  }
+  .nav__item {
+    margin-right: 2px;
+  }
+  .nav__link {
+    padding: 8px 11px;
+    font-size: 13px;
+  }
+  .panel {
+    padding: 22px 18px;
+  }
+  .panel_intro {
+    padding: 28px 22px;
+  }
+  .advice {
+    padding: 22px;
+  }
+  .trip-card {
+    padding: 22px 18px;
+  }
+  .contact-bar {
+    background-color: #ffffff;
+    border-top: 1px solid #d6dfd2;
+    box-shadow: 0 -6px 24px rgba(34, 62, 50, 0.08);
+  }
+  .booking-form__fieldset {
+    padding: 20px 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

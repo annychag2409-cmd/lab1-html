@@ -1,138 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Бронирование места | По пути</title>
-</head>
-<body>
-  <header>
-    <p><strong>По пути</strong> — сервис поиска попутчиков</p>
-
-    <nav aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="catalog.html">Поездки</a></li>
-        <li><a href="detail.html">Детали поездки</a></li>
-        <li><a href="collection.html">Мои поездки</a></li>
-        <li>
-          <a href="checkout.html" aria-current="page">Бронирование</a>
-        </li>
-      </ul>
-    </nav>
-
-    <hr>
-  </header>
-
-  <main id="main">
-    <h1>Бронирование места</h1>
-
-    <p>Маршрут: Уфа — Казань.</p>
-    <p>Отправление: 20 ноября 2026 года в 08:00.</p>
-    <p>Стоимость одного места: 1 500 ₽.</p>
-
-    <form action="checkout.html" method="get">
-      <fieldset>
-        <legend>Данные пассажира</legend>
-
-        <p>
-          <label for="full-name">Имя и фамилия *</label><br>
-
-          <input
-            type="text"
-            id="full-name"
-            name="full_name"
-            minlength="3"
-            maxlength="80"
-            autocomplete="name"
-            required>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Бронирование места | По пути</title>
+    <link href="src/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="page">
+    <a class="page__skip-link" href="#main">Перейти к содержимому</a>
+    <header class="page__header header">
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <nav aria-label="Основная навигация" class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalog.html">Поездки</a></li>
+          <li class="nav__item"><a class="nav__link" href="detail.html">Детали поездки</a></li>
+          <li class="nav__item"><a class="nav__link" href="collection.html">Мои поездки</a></li>
+          <li class="nav__item">
+            <a aria-current="page" class="nav__link nav__link_active" href="checkout.html">
+              Бронирование
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main content" id="main" tabindex="-1">
+      <p class="content__eyebrow">ПОЕЗДКИ С ХОРОШЕЙ КОМПАНИЕЙ</p>
+      <h1 class="content__title">Бронирование места</h1>
+      <p class="content__text">Маршрут: Уфа — Казань.</p>
+      <p class="content__text">Отправление: 20 ноября 2026 года в 08:00.</p>
+      <p class="content__text">Стоимость одного места: 1 500 ₽.</p>
+      <form action="checkout.html" class="content__section booking-form" method="get">
+        <fieldset class="booking-form__fieldset">
+          <legend class="booking-form__legend">Данные пассажира</legend>
+          <p class="booking-form__field">
+            <label class="booking-form__label" for="full-name">Имя и фамилия *</label>
+            <input
+              autocomplete="name"
+              class="booking-form__control"
+              id="full-name"
+              maxlength="80"
+              minlength="3"
+              name="full_name"
+              required=""
+              type="text"
+            />
+          </p>
+          <p class="booking-form__field">
+            <label class="booking-form__label" for="email">Электронная почта *</label>
+            <input
+              autocomplete="email"
+              class="booking-form__control"
+              id="email"
+              maxlength="100"
+              name="email"
+              required=""
+              type="email"
+            />
+          </p>
+        </fieldset>
+        <fieldset class="booking-form__fieldset">
+          <legend class="booking-form__legend">Параметры бронирования</legend>
+          <p class="booking-form__field">
+            <label class="booking-form__label" for="seats">
+              Количество мест для бронирования *
+            </label>
+            <input
+              class="booking-form__control"
+              id="seats"
+              max="3"
+              min="1"
+              name="seats"
+              required=""
+              step="1"
+              type="number"
+              value="1"
+            />
+          </p>
+          <p class="booking-form__field">
+            <input
+              class="booking-form__checkbox"
+              id="large-luggage"
+              name="large_luggage"
+              type="checkbox"
+              value="yes"
+            />
+            <label class="booking-form__label" for="large-luggage">
+              У меня есть крупногабаритный багаж
+            </label>
+          </p>
+          <p class="booking-form__field">
+            <label class="booking-form__label" for="music">Предпочтения по музыке в салоне *</label>
+            <select class="booking-form__control" id="music" name="music" required="">
+              <option value="">Выберите вариант</option>
+              <option value="quiet">Предпочитаю тишину</option>
+              <option value="pop">Поп-музыка</option>
+              <option value="rock">Рок</option>
+              <option value="any">Любая музыка</option>
+            </select>
+          </p>
+        </fieldset>
+        <p class="booking-form__field">
+          <label class="booking-form__label" for="comment">Комментарий водителю</label>
+          <textarea
+            class="booking-form__control"
+            cols="50"
+            id="comment"
+            maxlength="500"
+            name="comment"
+            placeholder="Например, укажите размеры багажа"
+            rows="3"
+          ></textarea>
         </p>
-
-        <p>
-          <label for="email">Электронная почта *</label><br>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            maxlength="100"
-            autocomplete="email"
-            required>
+        <p class="booking-form__field">* Обязательные поля.</p>
+        <p class="booking-form__field">
+          <button class="booking-form__button button button_primary" type="submit">
+            Отправить заявку
+          </button>
+          <button class="booking-form__button button button_secondary" type="reset">
+            Очистить форму
+          </button>
         </p>
-      </fieldset>
-
-      <fieldset>
-        <legend>Параметры бронирования</legend>
-
-        <p>
-          <label for="seats">
-            Количество мест для бронирования *
-          </label><br>
-
-          <input
-            type="number"
-            id="seats"
-            name="seats"
-            min="1"
-            max="3"
-            step="1"
-            value="1"
-            required>
-        </p>
-
-        <p>
-          <input
-            type="checkbox"
-            id="large-luggage"
-            name="large_luggage"
-            value="yes">
-
-          <label for="large-luggage">
-            У меня есть крупногабаритный багаж
-          </label>
-        </p>
-
-        <p>
-          <label for="music">
-            Предпочтения по музыке в салоне *
-          </label><br>
-
-          <select id="music" name="music" required>
-            <option value="">Выберите вариант</option>
-            <option value="quiet">Предпочитаю тишину</option>
-            <option value="pop">Поп-музыка</option>
-            <option value="rock">Рок</option>
-            <option value="any">Любая музыка</option>
-          </select>
-        </p>
-      </fieldset>
-
-      <p>
-        <label for="comment">
-          Комментарий водителю
-        </label><br>
-
-        <textarea
-          id="comment"
-          name="comment"
-          rows="3"
-          cols="50"
-          maxlength="500"
-          placeholder="Например, укажите размеры багажа"></textarea>
-      </p>
-
-      <p>* Обязательные поля.</p>
-
-      <p>
-        <button type="submit">Отправить заявку</button>
-        <button type="reset">Очистить форму</button>
-      </p>
-    </form>
-  </main>
-
-  <footer>
-    <hr>
-    <p>Сервис поиска попутчиков «По пути».</p>
-  </footer>
-</body>
+      </form>
+    </main>
+    <footer class="page__footer footer">
+      <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
+    </footer>
+  </body>
 </html>

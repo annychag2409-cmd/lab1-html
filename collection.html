@@ -1,106 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Запланированные поездки | По пути</title>
-</head>
-<body>
-  <header>
-    <p><strong>По пути</strong> — сервис поиска попутчиков</p>
-
-    <nav aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="catalog.html">Поездки</a></li>
-        <li><a href="detail.html">Детали поездки</a></li>
-        <li>
-          <a href="collection.html" aria-current="page">Мои поездки</a>
-        </li>
-        <li><a href="checkout.html">Бронирование</a></li>
-      </ul>
-    </nav>
-
-    <hr>
-  </header>
-
-  <main id="main">
-    <h1>Запланированные поездки</h1>
-
-    <section>
-      <h2>Мой план поездок</h2>
-
-      <table>
-        <caption>Поездки из Уфы на ноябрь 2026 года</caption>
-
-        <colgroup span="2"></colgroup>
-        <colgroup span="3"></colgroup>
-
-        <thead>
-          <tr>
-            <th colspan="2" scope="colgroup">Маршрут</th>
-            <th rowspan="2" scope="col">Дата</th>
-            <th rowspan="2" scope="col">Водитель</th>
-            <th rowspan="2" scope="col">Стоимость места</th>
-          </tr>
-
-          <tr>
-            <th scope="col">Город отправления</th>
-            <th scope="col">Город прибытия</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th rowspan="3" scope="rowgroup">Уфа</th>
-            <td>Казань</td>
-            <td>
-              <time datetime="2026-11-20">20.11.2026</time>
-            </td>
-            <td>Алексей</td>
-            <td>1 500 ₽</td>
-          </tr>
-
-          <tr>
-            <td>Самара</td>
-            <td>
-              <time datetime="2026-11-21">21.11.2026</time>
-            </td>
-            <td>Мария</td>
-            <td>1 800 ₽</td>
-          </tr>
-
-          <tr>
-            <td>Челябинск</td>
-            <td>
-              <time datetime="2026-11-22">22.11.2026</time>
-            </td>
-            <td>Игорь</td>
-            <td>1 300 ₽</td>
-          </tr>
-        </tbody>
-
-        <tfoot>
-          <tr>
-            <th colspan="4" scope="row">
-              Общая стоимость запланированных поездок
-            </th>
-            <td>4 600 ₽</td>
-          </tr>
-        </tfoot>
-      </table>
-
-      <p>
-        <a href="checkout.html">
-          Забронировать место на маршруте Уфа — Казань
-        </a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <hr>
-    <p>Сервис поиска попутчиков «По пути».</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Запланированные поездки | По пути</title>
+    <link href="src/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="page">
+    <a class="page__skip-link" href="#main">Перейти к содержимому</a>
+    <header class="page__header header">
+      <p class="header__brand"><a class="header__logo" href="index.html">По пути ↗</a></p>
+      <nav aria-label="Основная навигация" class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalog.html">Поездки</a></li>
+          <li class="nav__item"><a class="nav__link" href="detail.html">Детали поездки</a></li>
+          <li class="nav__item">
+            <a aria-current="page" class="nav__link nav__link_active" href="collection.html">
+              Мои поездки
+            </a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="checkout.html">Бронирование</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main content" id="main" tabindex="-1">
+      <p class="content__eyebrow">ПОЕЗДКИ С ХОРОШЕЙ КОМПАНИЕЙ</p>
+      <h1 class="content__title">Запланированные поездки</h1>
+      <section class="content__section panel">
+        <h2 class="content__heading">Мой план поездок</h2>
+        <div
+          aria-label="Запланированные поездки: таблица с горизонтальной прокруткой"
+          class="content__table-scroll"
+          role="region"
+          tabindex="0"
+        >
+          <table class="trips-table">
+            <caption class="trips-table__caption">Поездки из Уфы на ноябрь 2026 года</caption>
+            <colgroup class="trips-table__columns" span="2"></colgroup>
+            <colgroup class="trips-table__columns" span="3"></colgroup>
+            <thead class="trips-table__head">
+              <tr class="trips-table__row">
+                <th
+                  class="trips-table__cell trips-table__cell_heading"
+                  colspan="2"
+                  scope="colgroup"
+                >
+                  Маршрут
+                </th>
+                <th class="trips-table__cell trips-table__cell_heading" rowspan="2" scope="col">
+                  Дата
+                </th>
+                <th class="trips-table__cell trips-table__cell_heading" rowspan="2" scope="col">
+                  Водитель
+                </th>
+                <th class="trips-table__cell trips-table__cell_heading" rowspan="2" scope="col">
+                  Стоимость места
+                </th>
+              </tr>
+              <tr class="trips-table__row">
+                <th class="trips-table__cell trips-table__cell_heading" scope="col">
+                  Город отправления
+                </th>
+                <th class="trips-table__cell trips-table__cell_heading" scope="col">
+                  Город прибытия
+                </th>
+              </tr>
+            </thead>
+            <tbody class="trips-table__body">
+              <tr class="trips-table__row">
+                <th
+                  class="trips-table__cell trips-table__cell_heading"
+                  rowspan="3"
+                  scope="rowgroup"
+                >
+                  Уфа
+                </th>
+                <td class="trips-table__cell">Казань</td>
+                <td class="trips-table__cell">
+                  <time class="content__time" datetime="2026-11-20">20.11.2026</time>
+                </td>
+                <td class="trips-table__cell">Алексей</td>
+                <td class="trips-table__cell">1 500 ₽</td>
+              </tr>
+              <tr class="trips-table__row">
+                <td class="trips-table__cell">Самара</td>
+                <td class="trips-table__cell">
+                  <time class="content__time" datetime="2026-11-21">21.11.2026</time>
+                </td>
+                <td class="trips-table__cell">Мария</td>
+                <td class="trips-table__cell">1 800 ₽</td>
+              </tr>
+              <tr class="trips-table__row">
+                <td class="trips-table__cell">Челябинск</td>
+                <td class="trips-table__cell">
+                  <time class="content__time" datetime="2026-11-22">22.11.2026</time>
+                </td>
+                <td class="trips-table__cell">Игорь</td>
+                <td class="trips-table__cell">1 300 ₽</td>
+              </tr>
+            </tbody>
+            <tfoot class="trips-table__foot">
+              <tr class="trips-table__row">
+                <th class="trips-table__cell trips-table__cell_heading" colspan="4" scope="row">
+                  Общая стоимость запланированных поездок
+                </th>
+                <td class="trips-table__cell">4 600 ₽</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="content__text">
+          <a class="button button_primary" href="checkout.html">
+            Забронировать место на маршруте Уфа — Казань
+          </a>
+        </p>
+      </section>
+    </main>
+    <footer class="page__footer footer">
+      <p class="footer__text">Сервис поиска попутчиков «По пути».</p>
+    </footer>
+  </body>
 </html>
